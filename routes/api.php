@@ -4,8 +4,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\PresensiController;
-use App\Http\Controllers\GeocodingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +27,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     // API route for logout user
     Route::post('/logout', [AuthController::class, 'logout']);
+    Route::post('/insertdata', [DashboardController::class, 'insertdata']);
+    Route::get('/getdata', [DashboardController::class, 'getdata']);
+    Route::post('/postdatavisit', [DashboardController::class, 'postdatavisit']);
 });
