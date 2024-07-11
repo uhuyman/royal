@@ -22,10 +22,9 @@ class User extends Authenticatable
     public $timestamps = false;
     protected $fillable = [
         'id',
-        'nama',
+        'name',
         'email',
         'password',
-        'penempatan_id',
     ];
     protected $primaryKey = 'id';
 
@@ -39,4 +38,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    public function customers()
+    {
+        return $this->hasMany(Customer::class, 'id_user');
+    }
 }
