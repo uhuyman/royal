@@ -24,10 +24,12 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get('/profile', function (Request $request) {
         return auth()->user();
     });
-
+    
     // API route for logout user
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::post('/insertdata', [DashboardController::class, 'insertdata']);
     Route::get('/getdata', [DashboardController::class, 'getdata']);
     Route::post('/postdatavisit', [DashboardController::class, 'postdatavisit']);
+    Route::get('/getdatavisit', [DashboardController::class, 'getdatavisit']);
+    Route::get('/getuser', [DashboardController::class, 'getusername']);
 });

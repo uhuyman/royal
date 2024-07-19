@@ -28,7 +28,9 @@ class Customer extends Authenticatable
         'buy',
         'product_buy',
         'qty_recomend',
-        'quantity'
+        'quantity',
+        'jam',
+        'tanggal'
     ];
 
     protected $primaryKey = 'id';
